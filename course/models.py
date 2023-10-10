@@ -36,7 +36,7 @@ class Student(models.Model):
 
 
 class Term(models.Model):
-    title = models.CharField(max_length=256)
+    title = models.CharField(max_length=256, unique=True)
 
     def __str__(self):
         return f'{self.title}'
