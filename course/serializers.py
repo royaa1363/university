@@ -15,8 +15,8 @@ class Public_unitSerializer(serializers.ModelSerializer):
 
 
 class MajorSerializer(serializers.ModelSerializer):
-    main_unit = Main_unitSerializer()
-    public_unit = Public_unitSerializer()
+    main_units = Main_unitSerializer()
+    public_units = Public_unitSerializer()
 
     class Meta:
         model = Major
@@ -52,3 +52,10 @@ class TeacherSerializer(serializers.ModelSerializer):
     class Meta:
         model = Teacher
         fields = '__all__'
+
+
+class CustomTeacherSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Teacher
+        fields = ['last_name']
